@@ -12,7 +12,7 @@ const Login = () => {
 
   const fetchFun = () => {
     const email = window.sessionStorage.getItem("token");
-    if (email) navigate("/home");
+    if (email) navigate("/home/accountdetails");
   };
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Login = () => {
             alert("Login Successfully");
             window.sessionStorage.setItem("token", data.user);
             console.log(data.user);
-            navigate("/home");
+            navigate("/home/accountdetails");
           } else {
             alert("Invalid Credentials...");
             navigate("/");

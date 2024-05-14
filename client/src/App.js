@@ -16,34 +16,35 @@ import Register from './components/Register';
 
 function App() {
 
-  const func = async () => {
-    const user = await axios.get("http://localhost:5000/");
-    console.log('users: ', user.data);
+  // const func = async () => {
+  //   const user = await axios.get("http://localhost:5000/");
+  //   console.log('users: ', user.data);
     
-  }
+  // }
 
-  func();
+  // func();
 
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/register' element={<Register/>}/> 
-        <Route path='/home' element={<Main/>}>
-          <Route path='about' element={<Home/>}/>
-          <Route path='accountdetails' element={<AccountDetailsandSummary/>}/>
-          <Route path='acadhostel' element={<AcademicsandHostel/>}/>
-          <Route path='library' element={<Library/>}/>
-          <Route path='mess' element={<Mess/>}/>
-          <Route path='others' element={<Others/>}/>
-          <Route path='getclearance' element={<GetClearance/>}/>
-          <Route path='now'element={<Now/>}/>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Main />}>
+          <Route path="about" element={<Home />} />
+          <Route path="accountdetails" element={<AccountDetailsandSummary />} />
+          <Route path="acadhostel" element={<AcademicsandHostel />} />
+          <Route path="library" element={<Library />} />
+          <Route path="mess" element={<Mess />} />
+          <Route path="others" element={<Others />} />
+          <Route path="getclearance" element={<GetClearance />} />
+          <Route path="now" element={<Now />} />
         </Route>
-        <Route path='*' element={<Error/>}/>
-        <Route path='*/*' element={<Error/>}/>
+        <Route path="*" element={<Error />} />
+        <Route path="*/*" element={<Error />} />
+        
       </Routes>
     </Router>
-  )
+  );
 }
 
 export default App;
